@@ -7,46 +7,34 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Random {
-    private Date date;
+
     @Id
     private String id;
 
-    private String orginalList;
+    private String name;
+    private String latitude;
+    private String longitude;
+    private String wrapper;
 
-    private String randomList;
-
-    public String getRandomList() {
-        return randomList;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Date getDate() {
-        return date;
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 
-    public String getId() {
-        return id;
+    public void setWrapper(String wrapper) {
+        this.wrapper = wrapper;
     }
 
-    public void setIde(String id) {
-        this.id = id;
+    public String getWrapper() {
+        return wrapper;
     }
 
-
-    public String getOrginalList() {
-        return orginalList;
-    }
-
-    public void setOrginalList(String orginalList) {
-        this.orginalList = orginalList;
-    }
-
-    public void setRandomList(String randomList) {
-        this.randomList = randomList;
-    }
-
-    
+    //https://drive.google.com/drive/folders/1rhQEzOqXWaHk1yUDU32fFaaLdE2Imaco
 }

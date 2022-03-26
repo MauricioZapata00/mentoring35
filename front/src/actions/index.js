@@ -12,6 +12,7 @@ export const fetchRandom = (state) => (dispatch) => {
         body: JSON.stringify({list: state}) // body data type must match "Content-Type" header
     }).then(response => response.json())
       .then(json => {
+          console.log(json);
           dispatch({ type: "random-result", data: json });
           dispatch({ type: "view-loaded" });
         })

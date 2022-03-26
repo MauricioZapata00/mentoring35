@@ -30,17 +30,13 @@ public class RandomController {
 
     @PostMapping("")
     public Mono<Random> post(@RequestBody RequestDTO request) {
-        return Mono.just(new Random()).map(entity -> {
-            entity.setDate(new Date());
-            entity.setOrginalList(request.getList());
-            return entity;
-        }).map(entity -> {
-            var list = Stream.of(request.getList().split(","))
-                .map(p -> p.trim())
-                .collect(Collectors.toList());
-            Collections.shuffle(list);
-            var randomList = list.stream().collect(Collectors.joining(","));
-            entity.setRandomList(randomList);
+        String latitude = ((Double)(-90 + (Math.random() * 180))).toString();
+        String longitude = ((Double)(-180 + (Math.random() * 360))).toString();
+        return Mono.just(new Random()).map(entity ->{
+            entity.setName(request.getList());
+            entity.setWrapper(request.getList() + " Lat: " + latitude  + " Lon: "+ longitude);
+            entity.setLatitude(latitude);
+            entity.setLongitude(longitude);
             return entity;
         }).flatMap(randomRepository::save);
     }

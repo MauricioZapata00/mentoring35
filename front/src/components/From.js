@@ -10,14 +10,14 @@ const From = (props) => {// component stateless
   };
   return <div>
     <form onSubmit={onSubmit}>
-      <label htmlFor="list">Ingrese una lista separada por comas:</label>
+      <label htmlFor="list">Ingresa el nombre de la persona que quiere teletransportar:</label>
       <br />
       <textarea id="list" style={{ width: "300px", height: "120px" }} 
         onChange={(e) => setState(e.target.value)}
       ></textarea>
       <br />
       <button type="submit" disabled={props.loading}>
-        Enviar
+        Teletransportar
       </button>
     </form>
   </div>

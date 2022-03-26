@@ -17,6 +17,6 @@ public class MongoConfig extends AbstractReactiveMongoConfiguration {
 
     @Override
     protected String getDatabaseName() {
-        return "reactive";
+        return "220325Locations";
     }
 }
